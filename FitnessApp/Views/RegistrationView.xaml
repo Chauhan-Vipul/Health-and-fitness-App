@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:vm="clr-namespace:FitnessApp.ViewModel"
+    x:Class="FitnessApp.Views.RegistrationView">
+    <ContentPage.BindingContext>
+        <vm:RegistrationViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Invalid" TargetType="Entry">               
+                <Setter Property="BackgroundColor" Value="red"/>
+            </Style>
+            <Style x:Key="Valid" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="Lavender"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>           
+     
+    <Grid RowDefinitions="160,50,Auto,Auto,Auto">
+
+      <yummy:PancakeView Grid.Row="0" CornerRadius="0,0,0,0">       
+            <Image Source="https://www.shutterstock.com/image-photo/sporty-young-man-running-on-260nw-1901196061.jpg"
+                    Aspect="AspectFill"
+                    Opacity="1"/>
+      </yummy:PancakeView>
+
+      <yummy:PancakeView Grid.Row="1" BackgroundColor="LightSalmon" CornerRadius="30"
+                         TranslationY="-15" Margin="20,0,20,0">
+
+      <Label Text="SIGN UP !" Grid.Row="1" FontAttributes="Bold"
+             TextColor="Wheat" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+      </yummy:PancakeView>
+      <StackLayout Grid.Row="2">
+
+      <Frame CornerRadius="20" HasShadow="False" WidthRequest="300"
+             HeightRequest="20" Margin="20,20,20,0" BackgroundColor="Lavender">
+
+      <Entry Placeholder="First Name" FontSize="14" Margin="15,-30,0,-30"
+             PlaceholderColor="Black" TextColor="Black"
+             x:Name="FirstName" Text="{Binding FirstName}">
+              <Entry.Behaviors>
+                        <xct:TextValidationBehavior MinimumLength="3" 
+                                        InvalidStyle="{StaticResource Invalid}"/>
+                                        
+                </Entry.Behaviors>
+      </Entry>
+      </Frame>
+
+
+      <Frame CornerRadius="20" HasShadow="False" WidthRequest="300"
+             HeightRequest="20" Margin="20,20,20,0" BackgroundColor="Lavender">
+
+      <Entry Placeholder="Last Name" FontSize="14" Margin="15,-30,0,-30"
+             PlaceholderColor="Black" TextColor="Black" x:Name="LastName" Text="{Binding LastName}">
+                <Entry.Behaviors>
+                        <xct:TextValidationBehavior MinimumLength="3" 
+                                        InvalidStyle="{StaticResource Invalid}"/>
+                </Entry.Behaviors>
+
+      </Entry>
+      </Frame>
+
+
+      <Frame CornerRadius="20" HasShadow="False" WidthRequest="300"
+             HeightRequest="20" Margin="20,20,20,0" BackgroundColor="Lavender">
+
+      <Entry Placeholder="Mobile No." FontSize="14" Margin="15,-30,0,-30"
+             PlaceholderColor="Black" TextColor="Black" Keyboard="Telephone"
+             x:Name="Phone" Text="{Binding Mobile}">
+                <Entry.Behaviors>
+                      <xct:MultiValidationBehavior InvalidStyle="{StaticResource Invalid}">
+                                 <xct:CharactersValidationBehavior CharacterType="Digit"
+                                                                   MinimumCharacterCount="10"/>
+                      </xct:MultiValidationBehavior>
+                                                            
+                </Entry.Behaviors>
+
+      </Entry>
+      </Frame>
+
+
+      <Frame CornerRadius="20" HasShadow="False" WidthRequest="300"
+             HeightRequest="20" Margin="20,20,20,0" BackgroundColor="Lavender">
+
+      <Entry Placeholder="Email" FontSize="14" Margin="15,-30,0,-30"
+             PlaceholderColor="Black" TextColor="Black" x:Name="EmailId" Text="{Binding Email}">
+                <Entry.Behaviors>
+                        <xct:EmailValidationBehavior DecorationFlags="Trim"
+                                        InvalidStyle="{StaticResource Invalid}"/>
+                </Entry.Behaviors>
+      </Entry>
+      
+      </Frame>
+
+      
+     <Frame CornerRadius="20" HasShadow="False" WidthRequest="300"
+             HeightRequest="20" Margin="20,20,20,0" BackgroundColor="Lavender">
+
+      <Entry Placeholder="Password" IsPassword = "True" FontSize="14" Margin="15,-30,0,-30"
+             PlaceholderColor="Black" TextColor="Black" x:Name="Pass" Text="{Binding Password}">
+             <Entry.Behaviors>
+                       
+              <xct:MultiValidationBehavior 
+                   InvalidStyle="{StaticResource Invalid}">
+                  <xct:TextValidationBehavior MinimumLength="6"/>                              
+                  <xct:CharactersValidationBehavior CharacterType="Digit"                              
+                               MinimumCharacterCount="1" />
+                  <xct:CharactersValidationBehavior 
+                               CharacterType="LowercaseLetter"
+                               MinimumCharacterCount="1"/>
+                  <xct:CharactersValidationBehavior
+                               CharacterType="UppercaseLetter" 
+                               MinimumCharacterCount="1" />
+                  <xct:CharactersValidationBehavior 
+                               CharacterType="NonAlphanumericSymbol"
+                               MinimumCharacterCount="1"/>
+                  <xct:CharactersValidationBehavior 
+                               CharacterType="Whitespace"
+                               MaximumCharacterCount="0"/>
+                 </xct:MultiValidationBehavior>
+            </Entry.Behaviors>
+       </Entry>
+      </Frame>
+ 
+    
+     </StackLayout>
+
+
+      <Button Text="Sign Up" BackgroundColor="OrangeRed" TextColor="White"
+              FontAttributes="Bold" HorizontalOptions="CenterAndExpand" WidthRequest="250"
+              CornerRadius="20" Command="{Binding UserRegistered}"
+              TranslationY="10" Grid.Row="4"/>
+     <Button Text="Already have account? Sign In" TextColor="Blue"
+            TranslationY="20" Grid.Row="5" Padding="10"
+           BackgroundColor="Transparent" Command="{Binding ReturnLoginCommand}"/>
+       </Grid>
+
+            </ScrollView.Content>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

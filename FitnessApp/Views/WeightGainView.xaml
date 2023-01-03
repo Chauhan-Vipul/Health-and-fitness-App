@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="FitnessApp.Views.WeightGainView">
+    <ContentPage.Content>
+         <ScrollView>
+            <ScrollView.Content>
+
+              <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+                <Image Source="https://assets.lybrate.com/imgs/product/kwds/diet-chart/Weight-Gain-Diet-Chart-v1.jpg"
+                       Aspect="Fill" Grid.Row="0" HeightRequest="250"/>
+
+
+                <yummy:PancakeView Grid.Row="2" CornerRadius="50,50,0,0">
+
+                <StackLayout BackgroundColor="PaleGoldenrod">
+
+                        <Label Text="Tips And Tricks" HorizontalOptions="Center"
+                               FontAttributes="Bold" FontSize="Large"
+                               TextColor="Blue"/>
+                        <Label Text=" 1. High Calorie Food" FontAttributes="Bold"
+                               FontSize="Large" TextColor="Black"/>
+                        <Label Text="To gain weight healthily, eat foods like banana, avocados, full-fat milk., that are high in calories and full of nutrients.
+A calorie-rich diet is necessary to gain the right amount of weight according to your body type. Therefore, besides high-calorie food, one needs to know the right high-calorie food to be consumed.
+Some nutritious high-calorie food that you may include in your diet are homemade granola bars, Tofu, Avocados, Chickpeas, etc. "
+                               FontSize="Body" Padding="5"/>
+
+
+                        <Label Text=" 2. Consume Healthy Carbs" FontAttributes="Bold"
+                               FontSize="Large" TextColor="Black"/>
+                        <Label Text="A popular misconception is that carbs make you overweight. The truth is weight gain depends on the number of calories you intake. So, you can add healthy carbs like bananas, potatoes, sweet potatoes, red or brown rice, whole grains, and fruits will help you gain weight healthily and safely.
+Try to include good quality carbs in all your meals in some form or the other. A balanced meal is essential to receive nutrients that the body needs to function properly. "
+                               Padding="5" FontSize="Body"/>
+
+                         <Label Text=" 3. Strength Training " FontAttributes="Bold"
+                               FontSize="Large" TextColor="Black"/>
+                        <Label Text="Your aim should be to gain lean muscle mass and not fat mass. Therefore, it is crucial to work out and do strength training at least 2-4 times a week.
+The right set of exercises can keep your body toned and defined. Pushups, lunges and squats are some of the exercises that you can include in your workout. "
+                              Padding="5" FontSize="Body" />
+                </StackLayout>
+              </yummy:PancakeView>
+
+                     <Button Grid.Row="3" Text="Back To Home" HorizontalOptions="Center"
+                    BackgroundColor="Lavender" x:Name="homeBtn" Command="{Binding HomeCall}"
+                    Margin="20"/>
+
+              </Grid>
+
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

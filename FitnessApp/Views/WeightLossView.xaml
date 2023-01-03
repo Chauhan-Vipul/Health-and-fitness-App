@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="FitnessApp.Views.WeightLossView">
+    <ContentPage.Content>
+         <ScrollView>
+            <ScrollView.Content>
+
+              <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+                <Image Source="https://assets.lybrate.com/q_auto:eco,f_auto,w_850/imgs/product/kwds/diet-chart/Weight-Loss-Diet-Chart-v1.jpg"
+                       Aspect="Fill" Grid.Row="0" HeightRequest="250"/>
+
+
+                <yummy:PancakeView Grid.Row="2" CornerRadius="50,50,0,0">
+
+                <StackLayout BackgroundColor="PaleGoldenrod">
+
+                        <Label Text="Tips And Tricks" HorizontalOptions="Center"
+                               FontAttributes="Bold" FontSize="Large"
+                               TextColor="Blue"/>
+                        <Label Text=" 1. Cut back on refined carbs" FontAttributes="Bold"
+                               FontSize="Large" TextColor="Black"/>
+                        <Label Text="One way to help lose weight quickly is to cut back on sugars and starches, or carbohydrates. This could be with a low carb eating plan or by reducing refined carbs and replacing them with whole grains.When you do that, your hunger levels go down, and you generally end up eating fewer calories
+With a low carb eating plan, you’ll utilize burning stored fat for energy instead of carb If you choose to eat more complex carbs like whole grains along with a calorie deficit, you’ll benefit from higher fiber and digest them more slowly. This makes them more filling to keep you satisfied A 2020 study confirmed that a very low carbohydrate diet was beneficial for losing weight in older populations (2Trusted Source)."
+                               FontSize="Body" Padding="5"/>
+
+
+                        <Label Text=" 2. Eat protein, fat, and vegetables" FontAttributes="Bold"
+                               FontSize="Large" TextColor="Black"/>
+                        <Label Text="Eating a recommended amount of protein is essential to help preserve your health and muscle mass while losing weight .
+Evidence suggests that eating adequate protein may improve cardiometabolic risk factors, appetite, and body weight.Don’t be afraid to load your plate with leafy green vegetables. They’re packed with nutrients, and you can eat very large amounts without greatly increasing calories and carbs.
+All vegetables are nutrient-rich and healthy foods to add to your diet, but some vegetables, like potatoes, sweet potatoes, winter squash, and corn, are higher in carbs.
+These vegetables are considered complex carbs because they contain fiber, but you may want to be mindful of serving size when adding these vegetables to your plate."
+                               Padding="5" FontSize="Body"/>
+
+                         <Label Text=" 3. Move your body" FontAttributes="Bold"
+                               FontSize="Large" TextColor="Black"/>
+                        <Label Text="Exercise, while not required to lose weight, can help you lose weight more quickly. Lifting weights has particularly good benefits.
+By lifting weights, you’ll burn calories and help prevent your metabolism from slowing down, which is a common side effect of losing weight
+Try strength training three to four times a week. If you’re new to lifting weights, a trainer may be able to help you get started. Make sure your doctor is also aware of any new exercise plans."
+                              Padding="5" FontSize="Body" />
+                </StackLayout>
+              </yummy:PancakeView>
+
+
+                    <Button Grid.Row="3" Text="Back To Home" HorizontalOptions="Center"
+                    BackgroundColor="Lavender" x:Name="homeBtn" Command="{Binding HomeCall}"
+                    Margin="20"/>
+
+              </Grid>
+
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

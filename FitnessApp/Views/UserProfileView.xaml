@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="FitnessApp.Views.UserProfileView">
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>
+
+
+            
+        <Grid RowDefinitions="200,200,Auto,Auto,Auto,Auto" BackgroundColor="FloralWhite">
+            <Image Source="https://img.freepik.com/free-vector/flat-design-lake-scenery_23-2149161405.jpg?w=2000"
+                    Grid.Row="0" Aspect="AspectFill"/>
+            <Image Source="https://wallpaperaccess.com/full/1108004.jpg"
+                   Grid.Row="1"
+                   HorizontalOptions="Center" TranslationY="-50" Aspect="AspectFill"
+                   Margin="95,0,0,0">
+            <Image.Clip>
+            <EllipseGeometry Center="100,100" RadiusX="100" RadiusY="100" />
+            </Image.Clip></Image>
+
+            <StackLayout Grid.Row="2" Spacing="30" >
+
+               
+                <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*,*">
+                     
+                      
+                <Label Text="Name : " Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" 
+                       TextColor="Black" FontSize="Large" Margin="30,0,0,0"/>
+                <Label Text="" x:Name="EntryName" Grid.Row="0" Grid.Column="1" FontSize="Body" TextColor="OrangeRed"
+                       VerticalOptions="Center"/>
+
+                <Label Text="Email ID : " Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand" 
+                       TextColor="Black" FontSize="Large" Margin="30,0,0,0"/>
+                <Label Text="" x:Name="EntryEmail" Grid.Row="1" Grid.Column="1" FontSize="Body" TextColor="OrangeRed"
+                       VerticalOptions="Center"/>
+
+                <Label Text="Mobile Number : " Grid.Row="2" Grid.Column="0" HorizontalOptions="StartAndExpand"
+                       TextColor="Black" FontSize="Large" Margin="30,0,0,0"/>
+                <Label Text="" x:Name="EntryPhone" Grid.Row="2" Grid.Column="1" FontSize="Body" TextColor="OrangeRed"
+                       VerticalOptions="Center"/>
+
+          
+                </Grid>
+              
+
+
+
+                <yummy:PancakeView CornerRadius="30" BackgroundColor="Lavender"
+                                   Margin="5" TranslationY="-20">
+
+                <StackLayout Grid.Row="3" TranslationY="0">
+                    <Label Text="Today's Progress." HorizontalOptions="Center" FontSize="Body"
+                           TextColor="Black" FontAttributes="Bold"/>
+                    <Grid RowDefinitions="90,70" ColumnDefinitions="*,2*">
+
+                        <Image Source="https://static.thenounproject.com/png/1166850-200.png"
+                               Grid.Row="0" Grid.Column="0" Margin="20,0,0,10"
+                               HorizontalOptions="StartAndExpand"/>
+                        
+                        <Label Text="Total Calories Burned : 354" Grid.Row="0"
+                               Grid.Column="1" VerticalOptions="Center" FontSize="20"
+                               FontAttributes="Italic" TextColor="DarkOrchid" HorizontalOptions="StartAndExpand"/>
+
+                        <Image Source="https://cdn-icons-png.flaticon.com/512/63/63123.png"
+                               Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"
+                               Margin="25,0,0,20"/>
+                        <Label Text="Water Consumed : 2.5L" Grid.Row="1"
+                               Grid.Column="1" VerticalOptions="Center"
+                               FontAttributes="Italic" TextColor="DarkOrchid" FontSize="20"/>
+
+                    </Grid>
+
+                </StackLayout>
+               </yummy:PancakeView>
+
+
+                <Button Text="Back To Home" Grid.Row="4" HorizontalOptions="Center"
+                        BackgroundColor="Lavender" TranslationY="-20" x:Name="HomeBtn" Clicked="HomeBtn_Clicked_1"/>
+
+                <StackLayout BackgroundColor="Black" Grid.Row="5" TranslationY="-40">
+                    <Label Text="Thank You For Banking On Us!" TextColor="White"
+                           FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center"/>
+                </StackLayout>           
+
+            </StackLayout>
+
+        </Grid>
+
+         </ScrollView.Content>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

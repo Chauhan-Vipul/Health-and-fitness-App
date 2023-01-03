@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:vm="clr-namespace:FitnessApp.ViewModel"
+    x:Class="FitnessApp.Views.DashBoardView">
+
+    <ContentPage.BindingContext>
+        <vm:DashBoardViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <ScrollView.Content>
+
+                <Grid RowDefinitions="150,50,Auto,Auto,Auto,Auto,Auto">
+                   
+                    <Image Source="https://www.ispo.com/sites/default/files/2020-04/Fitness%20App%20Training.jpg"
+                       Grid.Row="0" Aspect="Fill"/>
+
+                     
+                    <Grid ColumnDefinitions="*,*,*,*" Grid.Row="1"
+                          BackgroundColor="Black"  TranslationY="-5">
+                        <ImageButton Source="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/black_repicthousebase_1484336385-1.png"
+                               Grid.Column="0" Aspect="Fill" BackgroundColor="Lavender"
+                               BorderColor="Black" Margin="10,5,10,5"/>
+
+                        <ImageButton Source="https://static.thenounproject.com/png/188633-200.png"
+                                     Grid.Column="1" HeightRequest="20" Aspect="Fill" Margin="10,5,10,5"
+                                     x:Name="BtnDiet" Command="{Binding DietChart}" BackgroundColor="Lavender"/>
+                        
+                        <ImageButton Source="https://cdn-icons-png.flaticon.com/512/16/16363.png"
+                                     Grid.Column="3" Clicked="ImageButton_Clicked" BackgroundColor="Lavender"
+                                     HeightRequest="25" WidthRequest="40" Margin="10,5,10,5"/>
+
+                        <ImageButton Source="https://cdn-icons-png.flaticon.com/512/3373/3373118.png"
+                                     Grid.Column="2" HeightRequest="20" Aspect="Fill" Margin="10,5,10,5"
+                                     x:Name="BtnBMI" Command="{Binding BMICalculate}" BackgroundColor="Lavender"/>
+                    </Grid>
+               
+
+                    <StackLayout Grid.Row="2" TranslationY="0">
+                        
+                        <Grid ColumnDefinitions="2*,*">
+                           <Label Text="" x:Name="EntryName"
+                           FontSize="Body" TextColor="Black" FontAttributes="Italic"
+                           Margin="10,0,0,0" Grid.Column="0"/>
+                           
+                           
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/1827/1827504.png"
+                                   Grid.Column="1" HeightRequest="30" HorizontalOptions="End" Margin="0,0,10,0"/>
+
+                        </Grid>
+                        
+                        <Label Text="Welcome Back" HorizontalTextAlignment="Start"
+                           FontSize="30" TextColor="Black" FontAttributes="Bold"
+                           Margin="10,0,0,0" TranslationY="-10"/>
+                       
+                        <yummy:PancakeView CornerRadius="25" Margin="20,0,20,0" TranslationY="-10">
+                        <StackLayout>
+                        <SearchBar Placeholder="search.." BackgroundColor="Lavender"
+                                    Opacity="0.6" PlaceholderColor="Black"/>
+                            
+                        </StackLayout>
+                        </yummy:PancakeView>
+                       
+                    </StackLayout>      
+
+
+
+                    <Label Text="This Week's Transformations..."
+                      TextColor="Black" FontAttributes="Italic" FontSize="Large" Grid.Row="3"
+                      TranslationY="10" Margin="10,0,0,0" HorizontalOptions="Center"/>
+
+
+                    <CollectionView x:Name="SingleView" HeightRequest="180" Grid.Row="4"
+                                    TranslationY="10" Margin="10,0,10,0" ItemsSource="{Binding transformations}">                                            
+                     
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                    
+                            <Frame CornerRadius="20"
+                                   WidthRequest="100" HeightRequest="170" Margin="10" BackgroundColor="Lavender" >
+                        
+                                <StackLayout>
+                                    <Image Source="{Binding Image}"
+                                           HeightRequest="125" WidthRequest="100"
+                                           Aspect="Fill"/>
+                                    <Label Text="{Binding Name}" TextColor="Black"
+                                           FontAttributes="Bold" FontSize="20"/>
+                                    
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+                <StackLayout Grid.Row="5" TranslationY="20"> 
+                    <Label Text="Trainings" HorizontalOptions="Center" FontSize="Large"
+                           TextColor="Black"/>
+                    <yummy:PancakeView Margin="10" CornerRadius="30">
+                    <ImageButton Source="https://images.everydayhealth.com/images/everything-you-need-know-about-fitness-1440x810.jpg"
+                                 Command="{Binding Transformations}"/>
+                    </yummy:PancakeView>                   
+                    
+                </StackLayout>                       
+
+                </Grid>
+         
+             </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

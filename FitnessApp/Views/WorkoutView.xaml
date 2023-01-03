@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:vm="clr-namespace:FitnessApp.ViewModel"
+    x:Class="FitnessApp.Views.WorkoutView">
+    <ContentPage.BindingContext>
+        <vm:WorkoutViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+         <ScrollView>
+            <ScrollView.Content>
+
+
+            
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+            
+            <StackLayout Grid.Row="0">
+
+            <Label Text="Benefits of working out" FontAttributes="Bold" FontSize="Large"
+                   HorizontalOptions="Center" TextColor="Black"/>
+            <Label Text="We know daily exercise is good for optimizing health. But with so many options and limitless information available, it’s easy to get overwhelmed with what works. But not to worry. We’ve got your back (and body)!
+Check out the 10 exercises you can do for ultimate fitness. Combine them into a routine for a workout that’s simple but powerful and sure to keep you in shape for the rest of your life.
+After 30 days — although you can also do them just twice a week — you should see improvements in your muscular strength, endurance, and balance.
+Plus, notice a difference in how your clothes fit — winning!" FontSize="Body"
+                                                              Padding="10"/>
+
+            </StackLayout>
+
+            <Grid RowDefinitions="Auto,150,Auto" Grid.Row="1">
+                 <yummy:PancakeView BackgroundColor="Lavender"
+                               CornerRadius="20" Margin="10" Grid.Row="0" >
+                      <Label  Text="Dumbbell single-arm rows" Padding="10"
+                           FontAttributes="Bold" TextColor="Black" FontSize="18" VerticalOptions="Center"/>
+                 </yummy:PancakeView>
+
+                <Image Grid.Row="1" Source="https://images.squarespace-cdn.com/content/v1/59959e8737c581af1f6bb7b4/1509048445608-CQ3L92NLKX8HHGP0FGMI/one-arm-dumbbell-row.jpg"
+                       />
+
+                    <StackLayout Grid.Row="2">
+                        <Label Text="Place your left knee on the end of a sturdy bench and place your left hand palm-down on the bench for balance.
+     With your back parallel to the ground, reach down with your right hand and grab a dumbbell with your palm facing the bench.
+     Slowly bring the dumbbell up to your chest. Squeeze your back and shoulder muscles and slowly straighten your arm to the starting position.
+     Finish 1 set, then switch arms and do 1 set with your right knee and right hand on the bench."
+                               Padding="10"/>
+
+                    </StackLayout>
+
+            </Grid>
+
+            <Grid RowDefinitions="Auto,150,Auto" Grid.Row="2">
+                 <yummy:PancakeView BackgroundColor="Lavender"
+                               CornerRadius="20" Margin="10" Grid.Row="0" >
+                      <Label  Text="Dumbbell shoulder press" Padding="10"
+                           FontAttributes="Bold" TextColor="Black" FontSize="18" VerticalOptions="Center"/>
+                 </yummy:PancakeView>
+
+                <Image Grid.Row="1" Source="https://s3.amazonaws.com/prod.skimble/assets/2344995/image_iphone.jpg"
+                       Aspect="Fill" Margin="30,0,30,0"/>
+
+                    <StackLayout Grid.Row="2">
+                        <Label Text="Sit or stand with a dumbbell in each hand, your palms facing forward, and your elbows out to your side at 90-degree angles.
+Without leaning back or arching your back, press the dumbbells up over your head until your arms are almost straight.
+Slowly return them to the starting position." Padding="10"/>
+                               
+
+                    </StackLayout>
+
+            </Grid>
+
+
+            <Grid RowDefinitions="Auto,150,Auto" Grid.Row="3">
+                 <yummy:PancakeView BackgroundColor="Lavender"
+                               CornerRadius="20" Margin="10" Grid.Row="0" >
+                      <Label  Text="Dumbbell chest press" Padding="10"
+                           FontAttributes="Bold" TextColor="Black" FontSize="18" VerticalOptions="Center"/>
+                 </yummy:PancakeView>
+
+                <Image Grid.Row="1" Source="https://st2.depositphotos.com/8546304/11395/i/950/depositphotos_113951498-stock-photo-decline-dumbbell-bench-press.jpg"
+                       Aspect="Fill" Margin="30,0,30,0"/>
+
+                    <StackLayout Grid.Row="2">
+                        <Label Text="Lie flat on a bench with a dumbbell in each hand and your palms facing forward.
+Slowly press the dumbbells upward until your arms are directly over the shoulders. Be careful not to lock your elbows.
+Slowly lower the dumbbells to the starting position. Your elbows should be a little lower than your shoulders." Padding="10"/>
+                               
+
+                    </StackLayout>
+
+            </Grid>
+
+
+            <Grid RowDefinitions="Auto,150,Auto" Grid.Row="4">
+                 <yummy:PancakeView BackgroundColor="Lavender"
+                               CornerRadius="20" Margin="10" Grid.Row="0" >
+                      <Label  Text="Bicep curls" Padding="10"
+                           FontAttributes="Bold" TextColor="Black" FontSize="18" VerticalOptions="Center"/>
+                 </yummy:PancakeView>
+
+                <Image Grid.Row="1" Source="https://s3.amazonaws.com/prod.skimble/assets/2287282/image_iphone.jpg"
+                       Aspect="Fill" Margin="30,0,30,0"/>
+
+                    <StackLayout Grid.Row="2">
+                        <Label Text="Sit or stand with a dumbbell in each hand in front of you, your elbows at your sides, and your palms facing up.
+Curl the dumbbells up toward your shoulders by bending your elbows but keeping them stationary at your sides.
+Reverse the curl to the starting position." Padding="10"/>
+                               
+
+                    </StackLayout>
+
+            </Grid>
+
+
+            <Button Grid.Row="5" Text="Back To Home" HorizontalOptions="Center"
+                    BackgroundColor="Lavender" x:Name="homeBtn"
+                    Command="{Binding HomeCall}"
+                    Margin="20"/>
+
+           
+
+            <StackLayout Grid.Row="6">
+                <xct:MediaElement
+                        x:Name="mediaElement"
+                        Source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        ShowsPlaybackControls="True"
+                        HorizontalOptions="Fill"
+                        />            
+
+            </StackLayout>           
+
+        </Grid>
+          </ScrollView.Content>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
+
